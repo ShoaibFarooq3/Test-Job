@@ -14,14 +14,14 @@ const MovieListing = () => {
     let renderMovies = movies.item_count;
     // for Search
     const shows = useSelector(getAllShows)
-    console.log(shows)
+    // console.log(shows)
     if (shows.results > 0) {
         setSearchResult(true)
         console.log(shows)
     }
     // let renderShows = shows.total_pages;
     // console.log(ALlMovies)
-    console.log(SearchResult)
+    // console.log(SearchResult)
     return (
         <div className='movie-wrapper'>
             <div className="movie-list">
