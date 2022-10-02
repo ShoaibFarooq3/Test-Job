@@ -74,7 +74,7 @@ export const Rated_Movies = () => {
     return fetch("https://api.themoviedb.org/3/movie/top_rated?api_key=06462030f7de9a187cf530c7dc957cda&language=en-US&page=1", requestOptions)
         .then(response => response.json())
         .then(result => {
-            console.log(result);
+            // console.log(result);
             return result;
         })
         .catch(error => {

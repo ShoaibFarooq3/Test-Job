@@ -113,7 +113,15 @@ body {
     border-radius: 11px;
   }
 }
-
+.RatingMovie_HEading{
+  text-align: center;
+  color: #fff;
+}
+.MAinStatHEad{
+  color: #fff;
+  font-size: 28px;
+  cursor: pointer;
+}
 @media screen and (min-width: 768px) {
   .movie_header{
     width: 60%;

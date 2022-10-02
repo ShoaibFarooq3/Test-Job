@@ -5,16 +5,16 @@ import MovieCard from '../MovieCard/MovieCard';
 import './MovieListing.scss';
 import { settings } from '../../common/setting.js';
 import Slider from "react-slick";
-
 const MovieListing = () => {
     // for movies
     const movies = useSelector(getAllMovies)
-    // console.log(movies.item_count)
+    // console.log(movies.items)
     let renderMovies = movies.item_count;
-    // for shows
+    // for Search
     const shows = useSelector(getAllShows)
-    let renderShows = shows;
-    console.log(shows)
+    // console.log(shows.results)
+    let renderShows = shows.total_pages;
+    // console.log(ALlMovies)
     return (
         <div className='movie-wrapper'>
             <div className="movie-list">
@@ -23,7 +23,7 @@ const MovieListing = () => {
                     <Slider {...settings}>
                         {renderMovies > 0 ? movies.items.map((movie, index) => {
                             return <MovieCard key={index} data={movie} />
-                        }):
+                        }) :
                             <div className='movies-error' ><h2>{movies.Error}</h2></div>
                         }
                     </Slider>
