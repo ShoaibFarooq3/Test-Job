@@ -16,7 +16,7 @@ const Stats = () => {
         var Final_Rating_Value = [];
         var VoteCount = [];
         Ratingdata.results.forEach((Innerelement, key) => {
-          console.log(key[Math.floor(Math.random() * key.length)])
+          // console.log(key[Math.floor(Math.random() * key.length)])
           if (key < 10) {
             Final_Name_Data.push(Innerelement.title.replace("The", "").replace(/\s/g, '').substring(0, 4) + "...");
             Final_Rating_Value.push(Innerelement.vote_average);
@@ -27,7 +27,6 @@ const Stats = () => {
         setRateData(Final_Rating_Value)
         setFinalVoteCount(VoteCount)
       }
-
     })
   }, [])
   const options = {

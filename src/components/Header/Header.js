@@ -5,6 +5,7 @@ import { fetchAsyncMovies, fetchAsyncShows, getAllShows } from '../../features/m
 import user from '../../images/user.png';
 import './Header.scss';
 import { Link } from 'react-router-dom';
+import SearchResult from '../SearchResult/SearchResult';
 
 const Header = () => {
     const [ALlMovies, setAllMovies] = useState(false);
@@ -20,35 +21,38 @@ const Header = () => {
             alert("Please enter text")
         else {
             // dispatch(fetchAsyncMovies(term))
-            dispatch(fetchAsyncShows(term))
+            dispatch(fetchAsyncShows(term));
+            setAllMovies(true)
+
         }
         event.preventDefault();
 
     }
-    const shows = useSelector(getAllShows)
     return (
+        <>
+            <div className='header'>
+                <Link to={`/`}>
+                    <div className="MAinStatHEad" >
+                        <h6>Home</h6>
+                    </div>
+                </Link>
+                <Link to={`/Stats`}>
+                    <div className="MAinStatHEad" >
+                        <h6>Statistics</h6>
+                    </div>
+                </Link>
 
-        <div className='header'>
-            <Link to={`/`}>
-                <div className="MAinStatHEad" >
-                    <h6>Home</h6>
+                <div className="search-bar">
+                    <form onSubmit={submitHandler}>
+                        <input type="text" value={term} placeholder='Search Movie' name="search" onChange={handleChange} autoComplete="off" />
+                        <button type='submit'> <i className="fa fa-search"></i> </button>
+                    </form>
                 </div>
-            </Link> <Link to={`/Stats`}>
-                <div className="MAinStatHEad" >
-                    <h6>Statistics</h6>
+                <div className="user-img">
+                    <img src={user} alt="user-img" />
                 </div>
-            </Link>
-            <div className="search-bar">
-                <form onSubmit={submitHandler}>
-                    <input type="text" value={term} placeholder='Search Movie' name="search" onChange={handleChange} autoComplete="off" />
-                    <button type='submit'> <i className="fa fa-search"></i> </button>
-                </form>
-            </div>
-            <div className="user-img">
-                <img src={user} alt="user-img" />
-            </div>
-        </div>
-
+            </div >
+        </>
     )
 }
 

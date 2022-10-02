@@ -2,7 +2,7 @@ import React from 'react'
 import { RotatingLines } from 'react-loader-spinner'
 const Loader = () => {
   return (
-    <div className='container'>
+    <div className='container Loader_Class'>
       <RotatingLines
         strokeColor="grey"
         strokeWidth="4"

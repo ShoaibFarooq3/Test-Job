@@ -47,7 +47,7 @@ const movieSlice = createSlice({
         // for shows
         [fetchAsyncShows.fulfilled]: (state, { payload }) => {
             console.log('fullfiled successfully');
-            console.log(payload)
+            // console.log(payload)
             return { ...state, shows: payload }
         },
         // for show/movie details

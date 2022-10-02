@@ -13,6 +13,7 @@ import PageNotFound from "./components/PageNotFound/PageNotFound.js";
 import Footer from './components/Footer/Footer'
 import MovieDetails from './components/MovieDetails/MovieDetails';
 import Stats from './components/Stats/Stats';
+import SearchResult from './components/SearchResult/SearchResult';
 
 
 function App() {
@@ -25,7 +26,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/movie/:imdbID" component={MovieDetails} />
             <Route exact path="/Stats" component={Stats} />
-            <Route component={PageNotFound} />
+            <Route xact path="/SearchResult" component={SearchResult} />
           </Switch>
         </div>
         <Footer />
